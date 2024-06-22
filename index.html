@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Découvrez notre délicieux menu et nos spécialités culinaires françaises."
+    />
+    <meta
+      name="keywords"
+      content="restaurant, nourriture, cuisine française, réservation"
+    />
+    <title>Chrono-Miam : Des Plats Contre la Montre</title>
+
+    <!-- police géniale lien cdn  version 6.2.1 -->
+    <!-- police géniale lien cdn  version 6.2.1 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- lien de fichier CSS personnalisé -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- La section d'en-tête commence -->
+
+    <header class="header">
+      <a href="#" class="logo"> <i class="fas fa-utensils"></i> resto </a>
+
+      <nav class="navbar">
+        <a href="#home">accueil</a>
+        <a href="#about">à propos</a>
+        <a href="#popular">populaire</a>
+        <a href="#menu">menu</a>
+        <a href="#order">commander</a>
+        <a href="#blogs">blog</a>
+      </nav>
+
+      <div class="icons">
+        <div id="menu-btn" class="fas fa-bars" title="Menu"></div>
+        <div id="search-btn" class="fas fa-search" title="Rechercher"></div>
+        <div id="cart-btn" class="fas fa-shopping-cart" title="Panier"></div>
+        <div id="login-btn" class="fas fa-user" title="Utilisateur"></div>
+      </div>
+    </header>
+
+    <!-- La section d'en-tête se termine -->
+
+   <!-- Formulaire de recherche -->
+<section class="search-form-container" hidden>
+  <form action="#" method="get">
+    <input
+      type="search"
+      name="search"
+      placeholder="Cherchez ici..."
+      id="search-box"
+      aria-label="Cherchez"
+    />
+    <button
+      type="submit"
+      class="fas fa-search"
+      aria-label="Submit Search"
+    ></button>
+  </form>
+</section>
+
+<!-- La section du panier d'achat -->
+<section class="shopping-cart-container" hidden>
+  <div class="products-container">
+    <h3 class="title">vos produits</h3>
+    <div class="box-container">
+      <!-- Les produits ajoutés dynamiquement apparaîtront ici -->
+    </div>
+  </div>
+  <div class="cart-total">
+    <h3 class="title">total du panier</h3>
+    <div class="box">
+      <h3 class="subtotal">sous-total : <span id="subtotal-price">0 €</span></h3>
+      <h3 class="total">total : <span id="total-price">0 €</span></h3>
+      <a href="#" class="btn">procéder au paiement</a>
+    </div>
+  </div>
+</section>
+
+ <!-- formulaire de connexion -->
+<div class="login-form-container hidden">
+  <form action="">
+    <h3>Formulaire de connexion</h3>
+    <div class="inputBox">
+      <i class="fa-regular fa-envelope"></i>
+      <input type="email" name="email" placeholder="Entrez votre email" id="email" class="box" />
+    </div>
+    <div class="inputBox">
+      <i class="fa-solid fa-lock"></i>
+      <input type="password" name="password" placeholder="Entrez votre mot de passe" id="password" class="box" />
+    </div>
+    <div class="remember">
+      <input type="checkbox" name="remember" id="remember-me" />
+      <label for="remember-me">Se souvenir de moi</label>
+    </div>
+    <input type="submit" value="Se connecter" class="btn" />
+    <p>Mot de passe oublié ? <a href="#">Cliquez ici</a></p>
+    <p>
+      Vous n'avez pas de compte ?
+      <a href="#" id="create-account-link">Créez-en un</a>
+    </p>
+  </form>
+</div>
+
+<!-- formulaire d'inscription -->
+<div class="signup-form-container hidden">
+  <div class="form signup">
+    <h2>Inscription</h2>
+    <form>
+      <div class="inputBox">
+        <label for="username">Nom d'utilisateur</label>
+        <input type="text" id="username" name="username" required="required" />
+        <i class="fa-regular fa-user"></i>
+      </div>
+      <div class="inputBox">
+        <label for="email">Adresse e-mail</label>
+        <input type="email" id="email" name="email" required="required" />
+        <i class="fa-regular fa-envelope"></i>
+      </div>
+      <div class="inputBox">
+        <label for="password">Créer un mot de passe</label>
+        <input type="password" id="password" name="password" required="required" />
+        <i class="fa-solid fa-lock"></i>
+      </div>
+      <div class="inputBox">
+        <label for="confirm_password">Confirmer le mot de passe</label>
+        <input type="password" id="confirm_password" name="confirm_password" required="required" />
+        <i class="fa-solid fa-lock"></i>
+      </div>
+      <div class="remember">
+        <input type="checkbox" name="remember" id="remember-me-signup" />
+        <label for="remember-me-signup">Se souvenir de moi</label>
+      </div>
+      <input type="submit" value="S'inscrire" class="btn" />
+    </form>
+  </div>
+</div>
+
+
+
+   <!-- la section d'accueil démarre -->
+
+    <section class="home" id="home">
+      <div class="content">
+        <span>bienvenue aux connaisseurs de saveurs</span>
+        <h3>différentes épices pour les différents goûts 😋</h3>
+        <p>
+          Plongez-vous dans un monde où chaque bouchée est une célébration du
+ sens. Nos plats, préparés avec passion et précision, sont une ode à
+ la diversité des arômes et l'excellence culinaire. Laissez-vous être
+ transporté par une symphonie de saveurs qui racontent une histoire, celle d'un riche
+ patrimoine gastronomique et une quête incessante de perfection. Avec nous,
+ chaque ingrédient est soigneusement choisi pour vous offrir un moment inoubliable
+ expérience, où tradition et innovation se rencontrent pour le plaisir de
+ votre palais.
+        </p>
+        <a href="#" class="btn">Commandez maintenant</a>
+      </div>
+
+      <div class="image">
+        <img src="image/home-img.png" alt="" class="home-img" />
+        <img
+          src="image/home-parallax-img.png"
+          alt=""
+          class="home-parallax-img"
+        />
+      </div>
+    </section>
+
+    <!-- fin de la section d'accueil -->
+
+ <!-- la section catégorie commence -->
+
+    <section class="category">
+      <a href="#" class="box">
+        <img src="image/cat-1.png" alt="" />
+        <h3>combo</h3>
+      </a>
+
+      <a href="#" class="box">
+        <img src="image/cat-2.png" alt="" />
+        <h3>pizza</h3>
+      </a>
+
+      <a href="#" class="box">
+        <img src="image/cat-3.png" alt="" />
+        <h3>burger</h3>
+      </a>
+
+      <a href="#" class="box">
+        <img src="image/cat-4.png" alt="" />
+        <h3>chicken</h3>
+      </a>
+
+      <a href="#" class="box">
+        <img src="image/cat-5.png" alt="" />
+        <h3>dinner</h3>
+      </a>
+
+      <a href="#" class="box">
+        <img src="image/cat-6.png" alt="" />
+        <h3>café</h3>
+      </a>
+    </section>
+
+    <!-- fin de la section catégorie -->
+
+ <!-- à propos des débuts de section -->
+
+    <section class="about" id="about">
+      <div class="image">
+        <img src="image/about-img.png" alt="" />
+      </div>
+
+      <div class="content">
+        <span>Pourquoi nous choisir?</span>
+        <h3 class="title">qu'est-ce qui rend notre nourriture délicieuse !</h3>
+        <p>
+          Notre secret réside dans la sélection rigoureuse d'ingrédients frais, un
+ une pincée de créativité et une passion inébranlable pour les saveurs authentiques.
+ Chaque plat est une œuvre d'art culinaire, conçue pour éveiller vos sens
+ et vous offrir une expérience culinaire inoubliable.
+        </p>
+        <a href="#" class="btn">En savoir plus</a>
+        <div class="icons-container">
+          <div class="icons">
+            <img src="image/serv-1.png" alt="" />
+            <h3>livraison rapide</h3>
+          </div>
+          <div class="icons">
+            <img src="image/serv-2.png" alt="" />
+            <h3>nourriture fraîche</h3>
+          </div>
+          <div class="icons">
+            <img src="image/serv-3.png" alt="" />
+            <h3>meilleure qualité</h3>
+          </div>
+          <div class="icons">
+            <img src="image/serv-4.png" alt="" />
+            <h3>Assistance 24h/24 et 7j/7</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+   <!-- à propos des fins de section -->
+
+ <!-- la section populaire commence -->
+
+    <section class="popular" id="popular">
+      <div class="heading">
+        <span>nourriture populaire</span>
+        <h3>nos plats spéciaux</h3>
+      </div>
+
+      <div class="box-container">
+        <div class="box">
+          <a href="#" class="fas fa-heart" aria-label="Ajouter aux favoris"></a>
+          <div class="image">
+            <img src="image/food-1.png" alt="" />
+          </div>
+          <div class="content">
+            <h3>raviolis frits</h3>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span> (50) </span>
+            </div>
+            <div class="price">10.00 €<span>12.00 €</span></div>
+            <a href="#" class="btn" onclick="addToCart(event)">Ajouter au panier</a>
+          </div>
+        </div>
+
+        <div class="box">
+          <a href="#" class="fas fa-heart" aria-label="Ajouter aux favoris"></a>
+          <div class="image">
+            <img src="image/food-2.png" alt="" />
+          </div>
+          <div class="content">
+            <h3>Double Jab</h3>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span> (50) </span>
+            </div>
+            <div class="price">9.00 €<span>10.00 €</span></div>
+           <a href="#" class="btn" onclick="addToCart(event)">Ajouter au panier</a>
+          </div>
+        </div>
+
+        <div class="box">
+          <a href="#" class="fas fa-heart" aria-label="Ajouter aux favoris"></a>
+          <div class="image">
+            <img src="image/food-3.png" alt="" />
+          </div>
+          <div class="content">
+            <h3>pizza Margherita</h3>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span> (50) </span>
+            </div>
+            <div class="price">8.00 € <span>10.00 €</span></div>
+            <a href="#" class="btn" onclick="addToCart(event)">Ajouter au panier</a>
+          </div>
+        </div>
+
+        <div class="box">
+          <a href="#" class="fas fa-heart" aria-label="Ajouter aux favoris"></a>
+          <div class="image">
+            <img src="image/food-4.png" alt="" />
+          </div>
+          <div class="content">
+            <h3>Black Burger</h3>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span> (50) </span>
+            </div>
+            <div class="price">9.00 € <span>12.00 €</span></div>
+           <a href="#" class="btn" onclick="addToCart(event)">Ajouter au panier</a>
+          </div>
+        </div>
+
+        <div class="box">
+          <a href="#" class="fas fa-heart" aria-label="Ajouter aux favoris"></a>
+          <div class="image">
+            <img src="image/food-5.png" alt="" />
+          </div>
+          <div class="content">
+            <h3>pizza Regina</h3>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span> (50) </span>
+            </div>
+            <div class="price">9.00 € <span>10.00 €</span></div>
+            <a
+              href="#"
+              class="fas fa-heart"
+              aria-label="Ajouter aux favoris"
+            ></a><a href="#" class="btn" onclick="addToCart(event)">Ajouter au panier</a>
+          </div>
+        </div>
+
+        <div class="box">
+          <a href="#" class="fas fa-heart" aria-label="Ajouter aux favoris"></a>
+          <div class="image">
+            <img src="image/food-6.png" alt="" />
+          </div>
+          <div class="content">
+            <h3>pizza garnie</h3>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span> (50) </span>
+            </div>
+            <div class="price">8.00 € <span>10.00 €</span></div>
+            <a href="#" class="btn" onclick="addToCart(event)">Ajouter au panier</a>
+          </div>
+        </div>
+
+        <div class="box">
+          <a href="#" class="fas fa-heart" aria-label="Ajouter aux favoris"></a>
+          <div class="image">
+            <img src="image/food-7.png" alt="" />
+          </div>
+          <div class="content">
+            <h3>Burger</h3>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span> (50) </span>
+            </div>
+            <div class="price">9.00 € <span>11.00 €</span></div>
+           <a href="#" class="btn" onclick="addToCart(event)">Ajouter au panier</a>
+          </div>
+        </div>
+
+        <div class="box">
+          <a href="#" class="fas fa-heart" aria-label="Ajouter aux favoris"></a>
+          <div class="image">
+            <img src="image/food-8.png" alt="" />
+          </div>
+          <div class="content">
+            <h3>pizza américaine</h3>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span> (50) </span>
+            </div>
+            <div class="price">10.00 € <span>12.00 €</span></div>
+           <a href="#" class="btn" onclick="addToCart(event)">Ajouter au panier</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <!-- fin de la section populaire -->
+
+ <!-- la section bannière démarre -->
+    <section class="banner">
+      <div class="row-banner">
+        <div class="content">
+          <span>double cheese</span>
+          <h3>burger</h3>
+          <p>avec coca cola et frites</p>
+          <a href="#" class="btn">Commandez maintenant</a>
+        </div>
+      </div>
+
+      <div class="grid-banner">
+        <div class="grid">
+          <img src="image/banner-1.png" alt="" />
+          <div class="content">
+            <span>offre spéciale</span>
+            <h3>jusqu'à 50% de réduction</h3>
+            <a href="#" class="btn">Commandez maintenant</a>
+          </div>
+        </div>
+        <div class="grid">
+          <img src="image/banner-2.png" alt="" />
+          <div class="content center">
+            <span>offre spéciale</span>
+            <h3>jusqu'à 25% supplémentaires</h3>
+            <a href="#" class="btn">Commandez maintenant</a>
+          </div>
+        </div>
+        <div class="grid">
+          <img src="image/banner-3.png" alt="" />
+          <div class="content">
+            <span>offre limitée</span>
+            <h3>100 % de remise en argent</h3>
+            <a href="#" class="btn">Commandez maintenant</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+   <!-- fin de la section bannière -->
+
+ <!-- la section du menu démarre -->
+
+    <section class="menu" id="menu">
+      <div class="heading">
+        <span>notre carte</span>
+        <h3>nos meilleurs plats</h3>
+      </div>
+
+      <div class="box-container">
+        <a href="#" class="box">
+          <img src="image/menu-1.png" alt="" />
+          <div class="content">
+            <h3>Burger</h3>
+            <div class="price">10.00 €</div>
+          </div>
+        </a>
+
+        <a href="#" class="box">
+          <img src="image/menu-2.png" alt="" />
+          <div class="content">
+            <h3>pizza quatre saisons</h3>
+            <div class="price">9.00 €</div>
+          </div>
+        </a>
+
+        <a href="#" class="box">
+          <img src="image/menu-3.png" alt="" />
+          <div class="content">
+            <h3>croque-monsieur</h3>
+            <div class="price">8.00 €</div>
+          </div>
+        </a>
+
+        <a href="#" class="box">
+          <img src="image/menu-4.png" alt="" />
+          <div class="content">
+            <h3>Kabab</h3>
+            <div class="price">8.50 €</div>
+          </div>
+        </a>
+
+        <a href="#" class="box">
+          <img src="image/menu-5.png" alt="" />
+          <div class="content">
+            <h3>Pommes frites</h3>
+            <div class="price">5.00 €</div>
+          </div>
+        </a>
+
+        <a href="#" class="box">
+          <img src="image/menu-6.png" alt="" />
+          <div class="content">
+            <h3>Pizza</h3>
+            <div class="price">9.00 €</div>
+          </div>
+        </a>
+      </div>
+    </section>
+<!-- fin de la section du menu -->
+
+ <!-- la section de commande démarre -->
+
+    <section class="order" id="order">
+      <div class="heading">
+        <span>Commandez maintenant</span>
+        <h3>livraison à domicile la plus rapide</h3>
+      </div>
+
+      <div class="icons-container">
+        <div class="icons">
+          <img src="image/icon-1.png" alt="" />
+          <h3>7h00 à 22h30</h3>
+          <p>Service continu tous les jours.</p>
+        </div>
+
+        <div class="icons">
+          <img src="image/icon-2.png" alt="" />
+          <h3>+33-758-969-648</h3>
+          <p>Contactez-nous pour passer vos commandes.</p>
+          
+        </div>
+
+        <div class="icons">
+          <img src="image/icon-3.png" alt="" />
+          <h3>France - Paris</h3>
+          <p>Livraison disponible dans toute la ville.</p>
+        </div>
+      </div>
+
+      <form action="">
+        <div class="flex">
+          <div class="inputBox">
+            <span>Votre nom</span>
+            <input type="text" placeholder="nom du client" name="" id="" />
+          </div>
+          <div class="inputBox">
+            <span>Votre numéro</span>
+            <input
+              type="number"
+              placeholder="numéro du client"
+              name=""
+              id=""
+            />
+          </div>
+        </div>
+
+        <div class="flex">
+          <div class="inputBox">
+            <span>votre commande</span>
+            <input type="text" placeholder="la commande que tu veux" name="" id="" />
+          </div>
+          <div class="inputBox">
+            <span>combien</span>
+            <input type="number" placeholder="numéro ou commandes" name="" id="" />
+          </div>
+        </div>
+
+     <div class="flex">
+      <div class="inputBox">
+    <label for="user-details">vos détails</label>
+    <input type="text" placeholder="votre message" name="user_details" id="user-details" />
+  </div>
+  <div class="inputBox">
+    <label for="pickup-time">heure de prise en charge</label>
+    <input type="datetime-local" name="pickup_time" id="pickup-time" />
+  </div>
+</div>
+
+       <div class="flex">
+          <div class="inputBox">
+            <textarea
+              placeholder="Votre adresse"
+              id=""
+              cols="30"
+              rows="10"
+            ></textarea>
+          </div>
+          <div class="inputBox">
+  <iframe
+    class="map"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30153.788252261566!2d72.82321484621745!3d19.141690214227783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b63aceef0c69%3A0x2aa80cf2287dfa3b!2sJogeshwari%20West%2C%20Mumbai%2C%20Maharashtra%20400047!5e0!3m2!1sen!2sin!4v1634657187694!5m2!1sen!2sin"
+    allowfullscreen=""
+    title="Carte De Jogeshwari West, Mumbai"
+  ></iframe>
+</div>
+
+        <input type="submit" value="proceed to order" class="btn" />
+      </form>
+    </section>
+
+   <!-- fin de la section de commande -->
+
+ <!-- la section des blogs démarre -->
+
+    <section class="blogs" id="blogs">
+      <div class="heading">
+        <span>nos blogs</span>
+        <h3>nos histoires quotidiennes</h3>
+      </div>
+
+      <div class="box-container">
+        <div class="box">
+          <div class="image">
+            <h3><i class="fas fa-calendar"></i> 21 juin 2024</h3>
+            <img src="image/blog-1.jpg" alt="" />
+          </div>
+          <div class="content">
+            <div class="tags">
+              <a href="#"> <i class="fas fa-tag"></i> nourriture / </a>
+              <a href="#"> <i class="fas fa-tag"></i> burger / </a>
+              <a href="#"> <i class="fas fa-tag"></i> pizza </a>
+            </div>
+            <h3>le titre du blog va ici...</h3>
+            <p>
+              Découvrez les saveurs authentiques et les histoires culinaires qui font notre
+ restaurant une expérience inoubliable. Chaque plat raconte une histoire,
+ venez en faire l'expérience avec nous.
+            </p>
+            <a href="#" class="btn">En savoir plus</a>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="image">
+            <h3><i class="fas fa-calendar"></i> 21 juin 2024</h3>
+            <img src="image/blog-2.jpg" alt="" />
+          </div>
+          <div class="content">
+            <div class="tags">
+              <a href="#"> <i class="fas fa-tag"></i> nourriture / </a>
+              <a href="#"> <i class="fas fa-tag"></i> burger / </a>
+              <a href="#"> <i class="fas fa-tag"></i> pizza </a>
+            </div>
+            <h3>le titre du blog va ici...</h3>
+            <p>
+             Découvrez les saveurs authentiques et les histoires culinaires qui font notre
+ restaurant une expérience inoubliable. Chaque plat raconte une histoire,
+ venez en faire l'expérience avec nous.
+            </p>
+            <a href="#" class="btn">En savoir plus</a>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="image">
+            <h3><i class="fas fa-calendar"></i> 21 juin 2024</h3>
+            <img src="image/blog-3.jpg" alt="" />
+          </div>
+          <div class="content">
+            <div class="tags">
+              <a href="#"> <i class="fas fa-tag"></i> nourriture / </a>
+              <a href="#"> <i class="fas fa-tag"></i> burger / </a>
+              <a href="#"> <i class="fas fa-tag"></i> pizza </a>
+            </div>
+            <h3>le titre du blog va ici...</h3>
+            <p>
+               Découvrez les saveurs authentiques et les histoires culinaires qui font notre
+ restaurant une expérience inoubliable. Chaque plat raconte une histoire,
+ venez en faire l'expérience avec nous.
+            </p>
+            <a href="#" class="btn">En savoir plus</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- fin de la section blogs -->
+
+ <!-- la section de pied de page commence -->
+
+    <section class="footer">
+      <div class="newsletter">
+        <h3>newsletter</h3>
+        <form action="">
+          <input type="email" name="" placeholder="entrer votre Email" id="" />
+          <input type="submit" value="subscribe" />
+        </form>
+      </div>
+
+      <div class="box-container">
+        <div class="box">
+          <h3>notre menu</h3>
+          <a href="#"><i class="fas fa-arrow-right"></i> pizza</a>
+          <a href="#"><i class="fas fa-arrow-right"></i> burger</a>
+          <a href="#"><i class="fas fa-arrow-right"></i> chicken</a>
+          <a href="#"><i class="fas fa-arrow-right"></i> pasta</a>
+          <a href="#"><i class="fas fa-arrow-right"></i> et plus...</a>
+        </div>
+
+        <div class="box">
+          <h3>Liens rapides</h3>
+          <a href="#home"> <i class="fas fa-arrow-right"></i> maison</a>
+          <a href="#about"> <i class="fas fa-arrow-right"></i> à propos</a>
+          <a href="#popular"> <i class="fas fa-arrow-right"></i> populaire</a>
+          <a href="#menu"> <i class="fas fa-arrow-right"></i> menu</a>
+          <a href="#order"> <i class="fas fa-arrow-right"></i> commande</a>
+          <a href="#blogs"> <i class="fas fa-arrow-right"></i> blogs</a>
+        </div>
+
+        <div class="box">
+          <h3>extra links</h3>
+          <a href="#"> <i class="fas fa-arrow-right"></i> ma commande</a>
+          <a href="#"> <i class="fas fa-arrow-right"></i> Mon compte</a>
+          <a href="#"> <i class="fas fa-arrow-right"></i> mon préféré</a>
+          <a href="#"> <i class="fas fa-arrow-right"></i> conditions d'utilisation</a>
+          <a href="#"> <i class="fas fa-arrow-right"></i> politique de confidentialité</a>
+        </div>
+
+        <div class="box">
+          <h3>Horaires d'ouvertures</h3>
+          <p>lundi : 7h00 à 22h00</p>
+          <p>mardi : 7h00 à 22h00</p>
+          <p>mercredi : 7h00 à 22h00</p>
+          <p>vendredi : 7h00 à 22h00</p>
+          <p>samedi et dimanche fermé</p>
+        </div>
+      </div>
+
+      <div class="bottom">
+  <div class="share">
+    <a href="#" class="fab fa-facebook-f" aria-label="Facebook"></a>
+    <a href="#" class="fab fa-twitter" aria-label="Twitter"></a>
+    <a href="#" class="fab fa-instagram" aria-label="Instagram"></a>
+    <a href="#" class="fab fa-linkedin" aria-label="LinkedIn"></a>
+    <a href="#" class="fab fa-pinterest" aria-label="Pinterest"></a>
+  </div>
+</div>
+
+
+        <div class="credit">
+           created <span>Kemogne™</span> | All rights reserved © 2024
+        </div>
+      </div>
+    </section>
+
+   <!-- fin de la section de pied de page -->
+
+ <!-- lien de fichier js personnalisé -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
