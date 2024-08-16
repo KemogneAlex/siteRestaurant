@@ -13,7 +13,7 @@ class LikeButton extends React.Component {
 
     return React.createElement(
       "button",
-      { onClick: () => this.setState({ liked: true }) },
+      { type: "button", onClick: () => this.setState({ liked: true }) },
       "Like"
     );
   }
@@ -21,4 +21,6 @@ class LikeButton extends React.Component {
 
 const domContainer = document.querySelector("#react-root");
 const root = createRoot(domContainer);
-root.render(React.createElement(LikeButton));
+root.render(
+  React.createElement(React.StrictMode, null, React.createElement(LikeButton))
+);
