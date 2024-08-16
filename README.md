@@ -22,4 +22,6 @@ Ce projet est un site web de nourriture populaire mettant en avant des plats sp�
 ## Installation
 
 1. Clonez le dépôt sur votre machine locale.
+
+   ```bash
    git clone https://github.com/KemogneAlex/siteRestaurant.git
