@@ -220,9 +220,7 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   // Appel des fonctions nécessaires après le chargement complet de la page.
-  attachEventListenersToButtons();
   attachEventListenersToQuantityInputs();
-  validateQuantityInputs();
   updateCart();
 });
 

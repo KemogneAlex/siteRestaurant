@@ -15,7 +15,6 @@
     <title>Chrono-Miam : Des Plats Contre la Montre</title>
 
     <!-- police géniale lien cdn  version 6.2.1 -->
-    <!-- police géniale lien cdn  version 6.2.1 -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
@@ -94,15 +93,15 @@
     <h3>Formulaire de connexion</h3>
     <div class="inputBox">
       <i class="fa-regular fa-envelope"></i>
-      <input type="email" name="email" placeholder="Entrez votre email" id="email" class="box" />
+      <input type="email" name="email" placeholder="Entrez votre email" id="email-login" class="box" />
     </div>
     <div class="inputBox">
       <i class="fa-solid fa-lock"></i>
-      <input type="password" name="password" placeholder="Entrez votre mot de passe" id="password" class="box" />
+      <input type="password" name="password" placeholder="Entrez votre mot de passe" id="password-login" class="box" />
     </div>
     <div class="remember">
-      <input type="checkbox" name="remember" id="remember-me" />
-      <label for="remember-me">Se souvenir de moi</label>
+      <input type="checkbox" name="remember" id="remember-me-login" />
+      <label for="remember-me-login">Se souvenir de moi</label>
     </div>
     <input type="submit" value="Se connecter" class="btn" />
     <p>Mot de passe oublié ? <a href="#">Cliquez ici</a></p>
@@ -119,13 +118,13 @@
     <h2>Inscription</h2>
     <form>
       <div class="inputBox">
-        <label for="username">Nom d'utilisateur</label>
-        <input type="text" id="username" name="username" required="required" />
+        <label for="username-signup">Nom d'utilisateur</label>
+        <input type="text" id="username-signup" name="username" required="required" />
         <i class="fa-regular fa-user"></i>
       </div>
       <div class="inputBox">
-        <label for="email">Adresse e-mail</label>
-        <input type="email" id="email" name="email" required="required" />
+        <label for="email-signup">Adresse e-mail</label>
+        <input type="email" id="email-signup" name="email" required="required" />
         <i class="fa-regular fa-envelope"></i>
       </div>
       <div class="inputBox">
@@ -134,13 +133,13 @@
         <i class="fa-solid fa-lock"></i>
       </div>
       <div class="inputBox">
-        <label for="confirm_password">Confirmer le mot de passe</label>
-        <input type="password" id="confirm_password" name="confirm_password" required="required" />
+        <label for="password-signup">Confirmer le mot de passe</label>
+        <input type="password" id="password-signup" name="password" required="required" />
         <i class="fa-solid fa-lock"></i>
       </div>
       <div class="remember">
-        <input type="checkbox" name="remember" id="remember-me-signup" />
-        <label for="remember-me-signup">Se souvenir de moi</label>
+        <label for="confirm_password">Se souvenir de moi</label>
+        <input type="checkbox" name="remember" id="confirm_password" /> 
       </div>
       <input type="submit" value="S'inscrire" class="btn" />
     </form>
@@ -567,15 +566,15 @@
         <div class="flex">
           <div class="inputBox">
             <span>Votre nom</span>
-            <input type="text" placeholder="nom du client" name="" id="" />
+            <input type="text" placeholder="nom du client" name="client_name" id="client-name" />
           </div>
           <div class="inputBox">
             <span>Votre numéro</span>
             <input
               type="number"
               placeholder="numéro du client"
-              name=""
-              id=""
+              name="client_number"
+              id="client-number"
             />
           </div>
         </div>
@@ -583,11 +582,11 @@
         <div class="flex">
           <div class="inputBox">
             <span>votre commande</span>
-            <input type="text" placeholder="la commande que tu veux" name="" id="" />
+            <input type="text" placeholder="la commande que tu veux" name="order" id="order-details" />
           </div>
           <div class="inputBox">
             <span>combien</span>
-            <input type="number" placeholder="numéro ou commandes" name="" id="" />
+            <input type="number" placeholder="numéro ou commandes" name="quantity" id="order-quantity" />
           </div>
         </div>
 
@@ -606,7 +605,8 @@
           <div class="inputBox">
             <textarea
               placeholder="Votre adresse"
-              id=""
+              name="address"
+              id="client-address"
               cols="30"
               rows="10"
             ></textarea>
@@ -773,5 +773,9 @@
 
  <!-- lien de fichier js personnalisé -->
     <script src="js/script.js"></script>
+    <div id="react-root"></div> <!-- Conteneur React -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="js/react-component.js"></script>
   </body>
 </html>
